@@ -1,0 +1,191 @@
+CREATE TABLE empoloyee_list(
+empoloye_id INT NOT NULL AUTO INCREMENT,
+empoloye_name VARCHAR() NOT NULL,
+empoloye_email VARCHAR() NOT NULL,
+
+empoloye_date DATE,
+empoloye KEY(empoloye_id)
+);
+INSERT INTO empoloye_list ("empoloye_name","empoloye_email",empoloye_date) VALUES ("rishu",r@gmail.com",NOW())
+
+select * from empoloye_list
+
+SELECT CONCAT('first_name','','lat_name') AS FULL_NAME
+
+UPDATE empoloye_list SET empoloye_name="Sachin Yadav" WHERE empoloye_id=1;
+
+DELETE empoloye_list WHERE empoloye_id=1;
+
+RENAME TABLE empoloye_list TO empolye_detail
+
+RENAME TABLE empolye_detail TO empoloye_list
+
+ALTER TABLE  RENAME empolye_detail TO empoloye_list
+
+ALTER TABLE empoloye_list
+ADD
+	empoloye_rating  VARCHAR(20) NOT NULL
+
+CREATE TABLE projects(
+	ProjectID INT NOT NULL,
+        ProjectName INT NOT NULL,
+	empoloyeId int,
+	PRIMARY KEY(ProjectID),
+	CONSTRAIN empoloyeproject FOREIGN KEY(empoloyeID) REFERENCE emopoloye_list (empoloyeID);
+);
+
+ALTER TABLE projects
+	ADD CONSTRAIN empoloyeproject FOREIGN KEY(empoloyeID) REFERENCE emopoloye_list (empoloyeID);
+
+
+ALTER TABLE projects
+	DROP CONSTRAIN empoloyeproject;
+
+source D:\work mysql
+
+SELECT empolyeid FROM empoloye_list
+
+SELECT empoloyeName FROM empoloye_list
+
+SELECT 50+60
+result =110
+
+-------column alias
+
+SELECT CONCAT("Sachin","","Yadav") AS fullname
+
+SELECT 
+	empoloyename
+FROM
+        empoloye_list
+ORDER BY
+	empoloyename DESC;
+
+
+SELECT 
+	jobtitle
+FROM
+        empoloyees
+ORDER BY
+	jobtitle
+
+SELECT 
+	ordernumber
+	orderlinenumber
+	orderquantity*eachprice
+FROM
+        orderdetail
+ORDER BY
+	orderquantity*eachprice
+
+SELECT 
+ 	orderNumber,status
+FROM 
+	orders
+ORDER BY FIELD (
+"process",
+"cancelled",
+"shiped",
+"on hold"
+)
+
+SELECT
+	firstName,
+        LastName,
+        jobtitle
+FROM
+	empoloyees
+WHERE
+	jobtitle="Sales Rep" AND
+	officeCode=1;
+
+SELECT
+	firstName,
+        LastName,
+        jobtitle
+FROM
+	empoloyees
+WHERE
+	jobtitle="Sales Rep" OR
+	officeCode=1;
+
+SELECT
+	firstName,
+        LastName,
+        jobtitle,
+	officeCode
+FROM
+	empoloyees
+WHERE
+	jobtitle="Sales Rep" ORs
+	officeCode=1;
+ORDER BY 
+	jobtitle,
+	officeCode
+
+SELECT
+	firstName,
+        LastName,
+	officeCode
+FROM
+	empoloyees
+WHERE
+	officeCode BETWEEN 1 AND 3
+ORDER BY 
+	officeCode;
+
+SELECT
+	firstName,
+        LastName
+FROM
+	empoloyees
+WHERE
+	lastName LIKE "%son"
+ORDER BY 
+	firstName;
+SELECT
+	firstName,
+        LastName
+FROM
+	empoloyees
+WHERE
+	lastName LIKE "Tho%"
+ORDER BY 
+	firstName;
+
+"%att%"
+"%att%"
+"_r%"
+"a__%"
+"t%n
+"
+
+SELECT
+	firstName,
+        LastName,
+	officeCode
+FROM
+	empoloyees
+WHERE
+	officeCode IN (1,2,3)
+ORDER BY 
+	officeCode;
+
+-------Describe table
+
+describe table_name
+
+ALTER TABLE empoloye_list
+	MODIFY empoloye_name VARCHAR(30) NOT NULL
+
+ALTER TABLE empoloye_list
+	CHANGE COLUMN empolye_name empolye_fullname NOT NULL
+
+ALTER TABLE empoloye_list
+	DROP COLUMN empoloye_rating
+
+
+
+
+
+
